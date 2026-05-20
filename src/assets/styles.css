@@ -1,23 +1,57 @@
-@import "tailwindcss";
+/* 1. @import ต้องอยู่บนสุดเสมอ */
 @import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap");
 
-/* ─── CSS Custom Properties ─────────────────────────── */
-:root {
-  --font-display: "Syne", sans-serif;
-  --font-body:    "DM Sans", sans-serif;
+/* 2. ประกาศฟอนต์ Local (@font-face) ไว้ด้านบน */
+@font-face {
+  font-family: 'LINE Seed Sans TH';
+  src: url('../assets/fonts/LINESeedSansTH_W_Rg.woff2') format('woff2');
+  font-weight: 400; /* Regular */
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'LINE Seed Sans TH';
+  src: url('../assets/fonts/LINESeedSansTH_W_Bd.woff2') format('woff2');
+  font-weight: 700; /* Bold */
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'LINE Seed Sans TH';
+  src: url('../assets/fonts/LINESeedSansTH_W_XBd.woff2') format('woff2');
+  font-weight: 800; /* ExtraBold */
+  font-style: normal;
+  font-display: swap;
+}
 
-  --bg:         #f5f4f0;
+/* 3. โหลด Tailwind */
+@import "tailwindcss";
+
+/* 4. ตั้งค่า Tailwind v4 */
+@theme {
+  --font-sans: "LINE Seed Sans TH", sans-serif;
+  --font-line: "LINE Seed Sans TH", sans-serif;
+  --font-display: "LINE Seed Sans TH", sans-serif;
+}
+
+/* 5. ตัวแปร CSS (โหมดสว่าง) มีอันเดียวพอ */
+:root {
+  --font-display: "LINE Seed Sans TH", sans-serif;
+  --font-body:    "LINE Seed Sans TH", sans-serif;
+
+  --bg:         #fafafa;
   --bg-card:    #ffffff;
-  --bg-subtle:  #eeecea;
+  --bg-subtle:  #f5f5f5;
   --text:       #18181a;
   --text-muted: #6b6b72;
-  --border:     #dddbd6;
+  --border:     #f5f5f5;
   --accent:     #2563eb;
   --accent-alt: #059669;
   --tag-bg:     #e8f0fe;
   --tag-text:   #1d4ed8;
 }
 
+/* 6. ตัวแปร CSS (โหมดมืด) */
 .dark {
   --bg:         #0e0f11;
   --bg-card:    #161719;
@@ -30,6 +64,10 @@
   --tag-bg:     #1e2d50;
   --tag-text:   #93c5fd;
 }
+
+/* ========================================= */
+/* โค้ดหลังจากนี้เป็น CSS เดิมของคุณ ไม่ต้องเปลี่ยน */
+/* ========================================= */
 
 *, *::before, *::after { box-sizing: border-box; }
 

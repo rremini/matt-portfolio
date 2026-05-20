@@ -1,43 +1,38 @@
 <script setup>
-/**
- * ExperienceSection.vue
- * Timeline layout for internships, hackathons, and certifications.
- */
+
 import { useReveal } from '../composables/useReveal.js'
 useReveal()
 
 const workExperience = [
   {
-    title:    'Frontend Developer Intern',
-    org:      'TechNova Labs',
-    period:   'Jun 2024 – Aug 2024',
-    type:     'Internship',
+    title:    'UX/UI Designer',
+    org:      'Freelance',
+    period:   'Jun 2024 – Present',
+    type:     'Freelance',
     bullets:  [
-      'Built 6 reusable Vue 3 components adopted across 3 product teams.',
-      'Reduced homepage bundle size by 22% via code-splitting and lazy loading.',
       'Collaborated with designers in Figma and ran weekly design-review sessions.',
     ],
     accent: '#2563eb',
   },
   {
-    title:    'Junior Web Developer Intern',
+    title:    'Junior Frontend Developer',
     org:      'DataPulse Analytics',
     period:   'Dec 2023 – Feb 2024',
     type:     'Internship',
     bullets:  [
-      'Developed interactive dashboards with Chart.js and REST API integration.',
+      'Developed interactive dashboards with REST API integration.',
       'Wrote unit tests with Jest, lifting coverage from 54% to 79%.',
     ],
     accent: '#059669',
   },
   {
-    title:    'Open Source Contributor',
-    org:      'VueUse (GitHub)',
-    period:   '2023 – Present',
-    type:     'Open Source',
+    title:    'Graphic Designer',
+    org:      'Adobe',
+    period:   '2023',
+    type:     'Freelance',
     bullets:  [
-      'Merged 4 PRs adding new composables and improving TypeScript types.',
-      '150+ stars on personal Vue plugin repository.',
+      'Creating layouts for brochures, posters, business cards, and packaging.',
+      'Designing social media assets, website interfaces (UI), and digital advertisements.',
     ],
     accent: '#7c3aed',
   },
@@ -45,8 +40,8 @@ const workExperience = [
 
 const achievements = [
   {
-    title:  'HackMIT 2024 – Top 10 Finalist',
-    detail: 'Built an AI-powered study planner with LLM summarisation in 36 hours.',
+    title:  'Config Figma 2026',
+    detail: 'Integrating AI innovation into the design process.',
     type:   'Hackathon',
     icon:   '🏆',
   },
@@ -63,8 +58,8 @@ const achievements = [
     icon:   '🎓',
   },
   {
-    title:  'VueConf US 2024 – Speaker',
-    detail: 'Presented "State Management Patterns in Vue 3" to ~200 attendees.',
+    title:  'SITCAMP 2026 – Mentor',
+    detail: 'UX/UI Instructor for design students and junior colleagues.',
     type:   'Speaking',
     icon:   '🎤',
   },
@@ -78,13 +73,12 @@ const achievements = [
       <div class="reveal mb-14">
         <p class="section-label mb-3">Experience & Achievements</p>
         <h2 class="font-display text-4xl md:text-5xl font-800 tracking-tight" style="color: var(--text)">
-          The journey so far.
+          Experience
         </h2>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-14">
 
-        <!-- Work Timeline -->
         <div>
           <h3 class="reveal font-display font-700 mb-8 text-lg" style="color: var(--text)">Work & Contributions</h3>
           <div class="flex flex-col gap-10">

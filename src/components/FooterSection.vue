@@ -1,8 +1,4 @@
 <script setup>
-/**
- * FooterSection.vue
- * Copyright, quick nav links, and social icons.
- */
 const year = new Date().getFullYear()
 
 const links = [
@@ -23,13 +19,11 @@ function scrollTo(href) {
     <div class="max-w-6xl mx-auto px-6">
       <div class="flex flex-col md:flex-row items-center justify-between gap-8">
 
-        <!-- Logo / brand -->
         <div class="flex flex-col items-center md:items-start gap-1">
           <span class="font-display text-xl font-800 gradient-text">matt.</span>
           <p class="font-display text-xs" style="color: var(--text-muted)">Frontend Developer · UX/UI Designer</p>
         </div>
 
-        <!-- Quick nav -->
         <nav class="flex flex-wrap justify-center gap-6">
           <a
             v-for="link in links"
@@ -59,14 +53,13 @@ function scrollTo(href) {
         </div>
       </div>
 
-      <!-- Divider -->
       <div class="mt-8 pt-6 flex flex-col sm:flex-row items-center justify-between gap-2"
            style="border-top: 1px solid var(--border)">
         <p class="font-display text-xs" style="color: var(--text-muted)">
           © {{ year }} matt, All Right Reserved
         </p>
         <p class="font-display text-xs" style="color: var(--text-muted)">
-          Created with ♥
+          Created with ♥ by matt.
         </p>
       </div>
     </div>

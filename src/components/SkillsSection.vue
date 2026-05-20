@@ -1,8 +1,4 @@
 <script setup>
-/**
- * SkillsSection.vue
- * Tabbed skill display: progress-bar skills + pill-based tool badges.
- */
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useReveal } from '../composables/useReveal.js'
 useReveal()
@@ -18,7 +14,7 @@ const tabs = [
 
 const skills = {
   languages: [
-    { name: 'JavaScript (ES2024)', level: 90 },
+    { name: 'JavaScript (ES6)', level: 90 },
     { name: 'TypeScript',          level: 80 },
     { name: 'Python',              level: 70 },
     { name: 'HTML & CSS',          level: 95 },
@@ -44,7 +40,6 @@ const skills = {
   ]
 }
 
-// Animate bars when they become visible
 let observer
 onMounted(() => {
   observer = new IntersectionObserver((entries) => {
@@ -71,7 +66,6 @@ onUnmounted(() => observer?.disconnect())
         </h2>
       </div>
 
-      <!-- Tab switcher -->
       <div class="reveal flex flex-wrap gap-2 mb-10">
         <button
           v-for="tab in tabs"

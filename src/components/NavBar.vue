@@ -1,9 +1,5 @@
 <script setup>
-/**
- * NavBar.vue
- * Sticky top navigation with smooth-scroll links, dark mode toggle,
- * and a mobile hamburger menu.
- */
+
 import { ref, onMounted, onUnmounted } from 'vue'
 
 const props = defineProps({
@@ -54,13 +50,11 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
   >
     <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
 
-      <!-- Logo -->
       <a href="#hero" @click.prevent="scrollTo('#hero')"
          class="font-display text-xl font-800 tracking-tight gradient-text select-none">
         matt.
       </a>
 
-      <!-- Desktop links -->
       <ul class="hidden md:flex items-center gap-8">
         <li v-for="link in links" :key="link.href">
           <a
@@ -72,9 +66,7 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
         </li>
       </ul>
 
-      <!-- Right controls -->
       <div class="flex items-center gap-3">
-        <!-- Dark mode toggle -->
         <button
           @click="emit('toggle-dark')"
           class="w-9 h-9 rounded-full flex items-center justify-center transition-colors duration-200"
@@ -89,7 +81,6 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
           </svg>
         </button>
 
-        <!-- Hamburger (mobile) -->
         <button
           @click="menuOpen = !menuOpen"
           class="md:hidden w-9 h-9 rounded-full flex items-center justify-center"
@@ -104,7 +95,6 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
       </div>
     </nav>
 
-    <!-- Mobile dropdown -->
     <Transition name="slide-down">
       <div
         v-if="menuOpen"
