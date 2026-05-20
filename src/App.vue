@@ -1,12 +1,5 @@
 <script setup>
-/**
- * App.vue  ─  Root component
- *
- * Orchestrates the single-page portfolio layout:
- *   NavBar → Hero → About → Skills → Projects → Experience → Contact → Footer
- *
- * Dark mode state lives here and is passed down via prop / emitted event.
- */
+
 import { ref, watch, onMounted } from 'vue'
 
 import NavBar          from './components/NavBar.vue'
@@ -62,7 +55,6 @@ onMounted(() => applyTheme(darkMode.value))
 </template>
 
 <style>
-/* Global reset — everything else lives in assets/styles.css */
 #layout {
   min-height: 100vh;
   display: flex;
