@@ -1,9 +1,4 @@
 <script setup>
-/**
- * ContactSection.vue
- * Contact form UI + social links. Wire up your own submit handler or
- * replace with a service like Formspree, EmailJS, etc.
- */
 import { ref, reactive } from 'vue'
 import { useReveal } from '../composables/useReveal.js'
 useReveal()

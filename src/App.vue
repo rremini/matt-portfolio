@@ -11,8 +11,6 @@ import ExperienceSection from './components/ExperienceSection.vue'
 import ContactSection  from './components/ContactSection.vue'
 import FooterSection   from './components/FooterSection.vue'
 
-// ── Dark mode ─────────────────────────────────────────────
-// Persist preference in localStorage; respect OS setting on first visit.
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
 const savedTheme  = localStorage.getItem('theme')
 const darkMode    = ref(savedTheme ? savedTheme === 'dark' : prefersDark)
@@ -34,12 +32,9 @@ onMounted(() => applyTheme(darkMode.value))
 </script>
 
 <template>
-  <!-- Wrap everything in a div so Vue has a single root -->
   <div id="layout">
-    <!-- ── Navigation ── -->
     <NavBar :dark-mode="darkMode" @toggle-dark="toggleDark" />
 
-    <!-- ── Main content ── -->
     <main>
       <HeroSection />
       <AboutSection />
@@ -49,7 +44,6 @@ onMounted(() => applyTheme(darkMode.value))
       <ContactSection />
     </main>
 
-    <!-- ── Footer ── -->
     <FooterSection />
   </div>
 </template>

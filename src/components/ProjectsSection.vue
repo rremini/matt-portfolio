@@ -85,7 +85,6 @@ const projects = [
           :class="`reveal-delay-${i + 1}`"
           :style="project.featured ? 'md:col-span-2' : ''"
         >
-          <!-- Image placeholder -->
           <div
             class="relative h-48 w-full overflow-hidden"
             :style="`border-bottom: 1px solid var(--border);`"
