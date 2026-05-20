@@ -1,53 +1,59 @@
 <script setup>
-/**
- * ProjectsSection.vue
- * Responsive grid of project cards with image placeholder,
- * tech stack pills, role, description, and CTA links.
- */
+
 import { ref } from 'vue'
 import { useReveal } from '../composables/useReveal.js'
+
+import khangkanImg from '../assets/images/khangkan.png'
+import supaclickImg from '../assets/images/supaclick-img.png'
+import spectrumImg from '../assets/images/spectrum-img.png'
+import sitcampImg from '../assets/images/sitcamp-img.png'
+
 useReveal()
 
 const projects = [
   {
     title:       'Khangkan',
-    description: 'A full-stack project management tool for developers, featuring Kanban boards, sprint planning, GitHub integration, and real-time collaboration.',
-    role:        'Lead Frontend Developer',
+    description: 'Digital Safe Space ในรูปแบบ Web Application  เพื่อช่วยให้ นักเรียน - นักศึกษา มีพื้นที่ ที่ปลอดภัยในการจัดการกับ ความเครียด ความกดดัน และปัญหาสุขภาพจิตต่างๆ โดยเราจะมุ่งเน้นไปที่การสร้างความเข้าใจที่ถูกต้องและต้องเข้าถึงง่าย ',
+    role:        'Frontend + Vue',
     tech:        ['Vue 3', 'TypeScript', 'Tailwind', 'Pinia', 'Node.js'],
-    live:        'https://devflow.example.com',
+    live:        'https://int-250-ga-1-hiew-khao-hor-ying-kha-five.vercel.app',
     repo:        'https://github.com/rremini/INT250-GA1-HiewKhaoHorYing-KhangKan',
     featured:    true,
     accent:      '#2563eb',
+    image:       khangkanImg,
   },
   {
-    title:       'StyleForge',
-    description: 'A design-token–driven UI component library built with Vue + CSS custom properties. Includes 30+ components, Storybook docs, and an npm package.',
-    role:        'Creator & Maintainer',
-    tech:        ['Vue 3', 'CSS', 'Storybook', 'Vite', 'npm'],
-    live:        'https://styleforge.example.com',
-    repo:        'https://github.com',
+    title:       'SupaClick',
+    description: ' The most chaotic clicking game in the galaxy. Tap the right emojis, dodge the bombs, and climb the leaderboard! ',
+    role:        'Frontend + Vue',
+    tech:        ['Vue 3', 'TailwindCSS', 'Vite', 'npm'],
+    live:        'https://int-250-ga-1-hiew-khao-hor-ying-sup.vercel.app',
+    repo:        'https://github.com/rremini/INT250-GA1-HiewKhaoHorYing-SupaClick',
     featured:    false,
     accent:      '#059669',
+    image:       supaclickImg,
   },
   {
     title:       'Spectrum',
     description: 'A Fashion-Tech startup developing a Personal Color analysis app to provide tailored styling recommendations based on skin tone, body shape, and hair color.',
     role:        'Frontend + React',
-    tech:        ['React', 'Tailwind', 'FastAPI', 'WebSocket'],
+    tech:        ['React', 'Tailwind', 'FastAPI'],
     live:        'https://sprectrum.vercel.app',
-    repo:        'https://github.com',
+    repo:        'https://github.com/rremini/Sprectrum-Personal-Color-Testing',
     featured:    false,
     accent:      '#7c3aed',
+    image:       spectrumImg,
   },
   {
-    title:       'HikeMapper',
-    description: 'Progressive web app for discovering and logging hiking trails using the OpenStreetMap API, offline PWA support, and a gamified achievement system.',
-    role:        'Solo Developer',
-    tech:        ['Vue 3', 'Leaflet', 'IndexedDB', 'PWA', 'Tailwind'],
-    live:        'https://hikemapper.example.com',
-    repo:        'https://github.com',
+    title:       'SITCAMP Portfolio Template',
+    description: 'ผลงานออกแบบบน Figma ชิ้นนี้ โปรเจกต์นี้เป็นส่วนหนึ่งของ Workshop ในค่าย SIT CAMP 2026 น้อง ๆ ที่เข้าร่วมค่ายสามารถนำไฟล์นี้ไปใช้งานได้ “ฟรี” และสามารถนำไปประยุกต์ใช้เป็นผลงานเพื่อใส่ใน Portfolio ของตนเองได้ รวมถึงอนุญาติให้แก้ไขเนื้อหาภายในโปรเจกต์นี้ได้ตามอิสระ',
+    role:        'Mentor',
+    tech:        ['Figma', 'TailwindCSS', 'HTML+CSS'],
+    live:        'https://www.figma.com/community/file/1629646397327588796',
+    repo:        'https://www.figma.com/design/IGhWlrCSc1AVLlIBfJCA3F/SIT-CAMP--Porttfolio?node-id=201-1796&t=JIeQCUd1FUkogmBW-1',
     featured:    false,
     accent:      '#d97706',
+    image:       sitcampImg,
   },
 ]
 </script>
@@ -60,7 +66,7 @@ const projects = [
         <div>
           <p class="section-label mb-3">Projects</p>
           <h2 class="font-display text-4xl md:text-5xl font-800 tracking-tight" style="color: var(--text)">
-            Things I've built.
+            All Projects.
           </h2>
         </div>
         <a href="https://github.com/rremini" target="_blank" rel="noopener" class="btn-outline self-start sm:self-auto">
@@ -81,21 +87,33 @@ const projects = [
         >
           <!-- Image placeholder -->
           <div
-            class="relative h-48 flex items-center justify-center text-white overflow-hidden"
-            :style="`background: linear-gradient(135deg, ${project.accent}22 0%, ${project.accent}44 100%); border-bottom: 1px solid var(--border);`"
+            class="relative h-48 w-full overflow-hidden"
+            :style="`border-bottom: 1px solid var(--border);`"
           >
-            <!-- Replace with <img :src="project.image" :alt="project.title" class="w-full h-full object-cover"> -->
-            <div class="flex flex-col items-center gap-2 opacity-40">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" :style="`color: ${project.accent}`" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="3" y="3" width="18" height="18" rx="2"/>
-                <circle cx="8.5" cy="8.5" r="1.5"/>
-                <polyline points="21 15 16 10 5 21"/>
-              </svg>
-              <span class="text-xs font-display font-600" :style="`color: ${project.accent}`">Project Preview</span>
+            <img 
+              v-if="project.image" 
+              :src="project.image" 
+              :alt="project.title" 
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+            />
+            
+            <div 
+              v-else 
+              class="w-full h-full flex items-center justify-center text-white"
+              :style="`background: linear-gradient(135deg, ${project.accent}22 0%, ${project.accent}44 100%);`"
+            >
+              <div class="flex flex-col items-center gap-2 opacity-40">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" :style="`color: ${project.accent}`" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <rect x="3" y="3" width="18" height="18" rx="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <polyline points="21 15 16 10 5 21"/>
+                </svg>
+                <span class="text-xs font-display font-600" :style="`color: ${project.accent}`">Project Preview</span>
+              </div>
             </div>
-            <!-- Featured badge -->
+
             <span v-if="project.featured"
-                  class="absolute top-3 right-3 pill"
+                  class="absolute top-3 right-3 pill z-10"
                   style="background: rgba(0,0,0,0.4); color: #fff; backdrop-filter: blur(6px);">
               ⭐ Featured
             </span>

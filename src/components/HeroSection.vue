@@ -13,10 +13,8 @@ function scrollTo(href) {
 </script>
 
 <template>
-  <!-- ── Hero ──────────────────────────────────────────── -->
   <section id="hero" class="min-h-screen flex items-center relative overflow-hidden pt-16"
     :style="{ background: 'var(--bg)' }">
-    <!-- Decorative blobs -->
     <div class="absolute -top-32 -right-32 w-96 h-96 rounded-full opacity-10 blur-3xl pointer-events-none"
       style="background: radial-gradient(circle, #2563eb 0%, transparent 70%);" />
     <div class="absolute bottom-0 -left-24 w-72 h-72 rounded-full opacity-10 blur-3xl pointer-events-none"
@@ -24,10 +22,8 @@ function scrollTo(href) {
 
     <div class="max-w-6xl mx-auto px-6 py-20 w-full grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
 
-      <!-- Left: text content -->
       <div class="flex flex-col gap-6 order-2 md:order-1">
 
-        <!-- Availability badge -->
         <div class="reveal hero-reveal inline-flex items-center gap-2 self-start">
           <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
           <span class="font-display text-xs font-600 tracking-widest uppercase" style="color: var(--text-muted)">
@@ -35,7 +31,6 @@ function scrollTo(href) {
           </span>
         </div>
 
-        <!-- Name -->
         <h1
           class="reveal hero-reveal font-display text-5xl md:text-6xl lg:text-7xl font-800 leading-none tracking-tight"
           style="color: var(--text)">
@@ -43,18 +38,15 @@ function scrollTo(href) {
           <span class="gradient-text">Maksakarn</span>
         </h1>
 
-        <!-- Role -->
         <p class="reveal hero-reveal font-display text-lg font-500" style="color: var(--text-muted)">
           Frontend Developer · UX/UI Designer
         </p>
 
-        <!-- Short intro -->
         <p class="reveal hero-reveal max-w-md leading-relaxed" style="color: var(--text-muted); font-size: 0.95rem;">
           School of Information Technology student at KMUTT with a strong passion for UX/UI Design and Frontend
           Development, dedicated to bridging the gap between design and code.
         </p>
 
-        <!-- CTAs -->
         <div class="reveal hero-reveal flex flex-wrap gap-3 pt-2">
           <a href="#projects" class="btn-primary" @click.prevent="scrollTo('#projects')">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none"
@@ -77,7 +69,6 @@ function scrollTo(href) {
         </div>
       </div>
 
-      <!-- Right: avatar -->
           <div class="order-1 md:order-2 flex justify-center md:justify-end w-full">
             <div class="relative w-64 md:w-80 lg:w-96 flex justify-center">
 
